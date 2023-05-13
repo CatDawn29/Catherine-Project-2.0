@@ -10,12 +10,12 @@ A description of your data:
 - My data is showing the symptoms of people who are more likely to have a stroke. It shows how having a higher BMI, hypertension, heart disease is more likely to lead to a stroke. 
 
 2 analytical insights from your data analysis.
-fig, axes = plt.subplots(ncols=2, sharey=True, figsize=(12,5))
-sns.stripplot(data=stroke_df, x='hypertension', y='heart_disease',ax=axes[0],
-                   hue='gender', edgecolor='white', linewidth=1);
-                   
-                   ax = sns.barplot(data=stroke_df, x='hypertension', y='heart_disease', hue='gender');
+
+ax = sns.barplot(data=stroke_df, x='hypertension', y='heart_disease', hue='gender');
 ax.set_title("Reasons why someone can get a stroke");
+
+
+sns.heatmap(corr, cmap = 'Greens',annot = True);
 
 These two graphs show how it doesn't matter if it is male or female, if the person has high hypertension and heart disease then they are more likely to have a stroke. 
 
