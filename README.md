@@ -11,10 +11,17 @@ A description of your data:
 
 2 analytical insights from your data analysis.
 
-ax = sns.barplot(data=stroke_df, x='hypertension', y='heart_disease', hue='gender');
-ax.set_title("Reasons why someone can get a stroke");
 
-
+# Subplot 1 
+axes[0].scatter(df_male['age'], df_male['bmi'], color = 'blue')
+axes[0].set_title('Males', fontsize = 12)
+axes[0].set_ylabel("age")
+axes[0].set_xlabel("bmi")
+# Subplot 2
+axes[1].scatter(df_female['age'], df_female['bmi'], color = 'orange')
+axes[1].set_title('Females', fontsize = 12)
+axes[1].set_ylabel("age")
+axes[1].set_xlabel("bmi");
 sns.heatmap(corr, cmap = 'Greens',annot = True);
 
 These two graphs show how it doesn't matter if it is male or female, if the person has high hypertension and heart disease then they are more likely to have a stroke. 
